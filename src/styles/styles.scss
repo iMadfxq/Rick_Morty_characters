@@ -1,0 +1,66 @@
+$primary-font: 'Fuzzy Bubbles', cursive;
+$background1: rgba(0, 0, 0, 0.9);
+$background2: rgba(0, 0, 0, 0.8);
+
+@mixin title {
+  font-family: $primary-font;
+  font-weight: 700;
+}
+@mixin text {
+  font-family: $primary-font;
+  font-weight: 400;
+}
+@mixin center-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+@mixin box-design {
+  border-radius: 10px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+@mixin section-size {
+  width: 100%;
+  padding: 0px 20px;
+}
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+html {
+  font-size: 62.5%;
+}
+header {
+  @include center-all();
+  flex-direction: column;
+  height: 110px;
+  background-color: $background1;
+  justify-content: space-around;
+  .header__logo {
+    @include center-all();
+    @include section-size();
+    a {
+      @include title();
+      font-size: 2.2rem;
+      color: green;
+    }
+  }
+  .header__nav {
+    @include section-size();
+    @include center-all();
+    @include text();
+    font-size: 1.6rem;
+    a {
+      color: green;
+    }
+  }
+}
+#content {
+  background-color: $background2;
+}
