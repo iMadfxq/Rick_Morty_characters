@@ -1,6 +1,7 @@
 $primary-font: 'Fuzzy Bubbles', cursive;
 $background1: rgba(0, 0, 0, 0.9);
 $background2: rgba(0, 0, 0, 0.8);
+$background3: rgba(0, 0, 0, 0.7);
 
 @mixin title {
   font-family: $primary-font;
@@ -39,7 +40,7 @@ html {
 header {
   @include center-all();
   flex-direction: column;
-  height: 110px;
+  height: 150px;
   background-color: $background1;
   justify-content: space-around;
   .header__logo {
@@ -47,7 +48,7 @@ header {
     @include section-size();
     a {
       @include title();
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: green;
     }
   }
@@ -56,11 +57,35 @@ header {
     @include center-all();
     @include text();
     font-size: 1.6rem;
+    margin-bottom: 10px;
     a {
       color: green;
+      text-decoration: underline;
     }
   }
 }
 #content {
   background-color: $background2;
+}
+.characters {
+  @include center-all();
+  @include section-size();
+  flex-wrap: wrap;
+  height: 100%;
+  &__item {
+    @include center-all();
+    @include box-design();
+    width: 240px;
+    height: 260px;
+    margin: 10px;
+    background-color: $background3;
+    img {
+      width: 200px;
+      border-radius: 10px;
+    }
+    h2 {
+      @include text();
+      color: white;
+    }
+  }
 }
