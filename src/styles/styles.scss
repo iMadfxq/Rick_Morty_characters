@@ -1,15 +1,17 @@
 $primary-font: 'Fuzzy Bubbles', cursive;
-$background1: rgba(0, 0, 0, 0.9);
-$background2: rgba(0, 0, 0, 0.8);
-$background3: rgba(0, 0, 0, 0.7);
+$background1: rgb(0, 0, 0);
+$background2: rgb(31, 31, 31);
+$background3: rgb(85, 85, 85);
 
 @mixin title {
   font-family: $primary-font;
   font-weight: 700;
+  color: green;
 }
 @mixin text {
   font-family: $primary-font;
   font-weight: 400;
+  color: white;
 }
 @mixin center-all {
   display: flex;
@@ -22,10 +24,9 @@ $background3: rgba(0, 0, 0, 0.7);
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
 @mixin section-size {
-  width: 100%;
+  width: 100vw;
   padding: 0px 20px;
 }
-
 
 
 * {
@@ -36,20 +37,26 @@ $background3: rgba(0, 0, 0, 0.7);
 }
 html {
   font-size: 62.5%;
+  background-color: $background2
+}
+main {
+  @include center-all();
 }
 header {
   @include center-all();
+  @include section-size();
   flex-direction: column;
-  height: 150px;
+  height: 120px;
   background-color: $background1;
-  justify-content: space-around;
+  justify-content: space-evenly;
   .header__logo {
     @include center-all();
     @include section-size();
     a {
       @include title();
-      font-size: 2rem;
-      color: green;
+      h1 {
+      font-size: 3rem;
+      }
     }
   }
   .header__nav {
@@ -57,35 +64,104 @@ header {
     @include center-all();
     @include text();
     font-size: 1.6rem;
-    margin-bottom: 10px;
     a {
-      color: green;
       text-decoration: underline;
+      @include text();
     }
   }
 }
-#content {
-  background-color: $background2;
-}
+
 .characters {
   @include center-all();
   @include section-size();
+  padding: 20px;
   flex-wrap: wrap;
   height: 100%;
+  background-color: $background2;
   &__item {
     @include center-all();
     @include box-design();
-    width: 240px;
-    height: 260px;
-    margin: 10px;
+    width: 130px;
+    height: 160px;
+    margin: 5px;
     background-color: $background3;
     img {
-      width: 200px;
+      width: 100px;
       border-radius: 10px;
     }
     h2 {
       @include text();
-      color: white;
+      font-size: 1.4rem;
+      margin-top: 10px;
+    }
+  }
+}
+
+.character__inner {
+  @include center-all();
+  flex-direction: column;
+  background-color: $background2;
+  @include section-size();
+  padding-bottom: 20px;
+  &--card {
+    margin-top: 20px;
+    h2 {
+      @include title();
+      margin-top: 10px;
+      font-size: 1.9rem;
+    }
+    img {
+      width: 200px;
+      border-radius: 10px;
+    }  
+  }
+  &--text {
+    h3 {
+      @include title();
+      margin-top: 5px;
+      font-size: 1.5rem;
+      span {
+        @include text();
+      }
+    }
+  }
+}
+@media only screen and (min-width: 720px) {
+  .characters__item {
+    width: 200px;
+    height: 220px;
+    margin: 10px;
+    background-color: $background3;
+    img {
+      width: 160px;
+      border-radius: 10px;
+    }
+    h2 {
+      @include text();
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+  }
+  header {
+    height: 100px;
+  }
+  .character__inner {
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    &--card {
+      margin-top: 20px;
+      h2 {
+        font-size: 2rem;
+      }
+      img {
+        width: 240px;
+      }  
+    }
+    &--text {
+      h3 {
+        font-size: 1.6rem;
+      }
     }
   }
 }
