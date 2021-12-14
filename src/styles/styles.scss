@@ -126,6 +126,26 @@ header {
     }
   }
 }
+.error404 {
+  @include center-all();
+  @include title();
+  @include section-size();
+  flex-direction: column;
+  h2 {
+    font-size: 2.8rem;
+    margin-top: 20px;
+  }
+  p {
+    @include text();
+    margin-top: 20px;
+    color: white;
+    font-size: 1.6rem;
+  }
+  a {
+    color: rgb(2, 67, 172);
+    text-decoration: underline;
+  }
+}
 @media only screen and (min-width: 720px) {
   .characters__item {
     width: 200px;
