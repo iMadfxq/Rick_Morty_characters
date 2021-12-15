@@ -13,6 +13,11 @@ const Home = async () => {
       </article>
     `).join('')}
   </div>
+  <footer>
+    <section class="footer__info">
+      <a href="https://imadfxq.github.io/myOwnWebPage/" target="_blank">Developed by:<span>iMadfxq</span></a>
+    </section>
+  </footer>
   `
   return view;
 };
