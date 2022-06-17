@@ -15,7 +15,7 @@ const Home = async () => {
   </div>
   <footer>
     <section class="footer__info">
-      <a href="https://imadfxq.github.io/myOwnWebPage/" target="_blank">Developed by:<span>iMadfxq</span></a>
+      <a href="https://imadfxq.com" target="_blank">Developed by:<span>iMadfxq</span></a>
     </section>
   </footer>
   `
